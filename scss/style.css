@@ -1,1 +1,21 @@
-/*# sourceMappingURL=style.css.map */
+body .right_box .h2_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .right_box .sauces .sauce_box {
+  border: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .right_box .sauces .sauce_box .name_box {
+  display: flex;
+}
+body .right_box .sauces .sauce_box .cnt_box {
+  display: flex;
+}
+body .right_box .down_box {
+  display: flex;
+  justify-content: space-between;
+}/*# sourceMappingURL=style.css.map */

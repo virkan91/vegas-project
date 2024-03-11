@@ -1,0 +1,57 @@
+body {
+  //
+
+  .right_box {
+    //
+
+    .h2_box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .sauces{
+        .sauce_box {
+            border: 1px solid;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .name_box{
+                display: flex;
+                .title{
+
+                }
+                .price{
+
+                }
+            }
+            .cnt_box{
+                display: flex;
+                .inc{
+    
+                }
+                .cnt{
+    
+                }
+                .dec{
+    
+                }
+            }
+        }
+
+    }
+
+    .down_box{
+        display: flex;
+        justify-content: space-between;
+        
+        .total_amount{
+
+        }
+        .btn_add{
+            
+        }
+    }
+  }
+}
