@@ -68,6 +68,17 @@ function get() {
       const inc = document.createElement("button");
       inc.className = "inc";
       inc.textContent = "-";
+      if (el.cnt === 0) {
+         inc.setAttribute("disabled", "disabled");
+      }
+      inc.onclick = () => {
+         sauces_list.forEach((e) => {
+            if (el.id === e.id) {
+               sauces_list[e.id - 1].cnt -= 1;
+            }
+            get();
+         });
+      };
 
       const cnt = document.createElement("p");
       cnt.className = "cnt";
