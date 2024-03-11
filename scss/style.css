@@ -1,21 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 34px;
+}
+@media (min-width: 754px) {
+  body {
+    grid-template-columns: 40% auto;
+  }
+}
 body .right_box .h2_box {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 40px;
+  font-size: 14px;
+}
+body .right_box .h1 {
+  margin-bottom: 20px;
+}
+body .right_box .p_h1 {
+  font-size: 18px;
+  color: #787878;
+}
+body .right_box .hr {
+  margin-top: 30px;
+}
+body .right_box .p_h2 {
+  color: #787878;
+  font-size: 16px;
 }
 body .right_box .sauces .sauce_box {
-  border: 1px solid;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #f6f7f8;
+  padding: 10px 14px;
+  margin-top: 8px;
+  border-radius: 5px;
 }
 body .right_box .sauces .sauce_box .name_box {
   display: flex;
+  font-size: 18px;
+  gap: 12px;
+}
+body .right_box .sauces .sauce_box .name_box .title {
+  font-size: 18px;
+  font-weight: 500;
+}
+body .right_box .sauces .sauce_box .name_box .price {
+  color: #787878;
 }
 body .right_box .sauces .sauce_box .cnt_box {
   display: flex;
+  align-items: center;
+  gap: 10px;
+}
+body .right_box .sauces .sauce_box .cnt_box .inc {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+}
+body .right_box .sauces .sauce_box .cnt_box .cnt {
+  font-size: 20px;
+  font-weight: 600;
+}
+body .right_box .sauces .sauce_box .cnt_box .dec {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
 }
 body .right_box .down_box {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding-top: 50px;
+}
+body .right_box .down_box .total_amount {
+  font-weight: 700;
+  font-size: 32px;
+}
+body .right_box .down_box .btn_add {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  background-color: #de341d;
+  border-radius: 100px;
+  padding: 16px 32px;
+}
+body .left_box img {
+  width: 100%;
+}
+body .left_box ul {
+  list-style-type: none;
+  margin-top: 32px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 8px;
+}
+@media (max-width: 700px) {
+  body .left_box ul {
+    padding: 0;
+  }
+}
+body .left_box ul li {
+  display: flex;
+  justify-content: space-between;
+  color: #787878;
+}
+body .left_box ul li:nth-child(1) {
+  color: black;
 }/*# sourceMappingURL=style.css.map */

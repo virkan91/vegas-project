@@ -37,9 +37,12 @@ function get() {
 
    const h1 = document.createElement("h1");
    h1.textContent = "Батат фри";
+   h1.className = "h1"
    const p_h1 = document.createElement("p");
    p_h1.textContent = "140 г";
+   p_h1.classList = "p_h1"
    const hr = document.createElement("hr");
+   hr.className = "hr"
 
    const h2_box = document.createElement("div");
    h2_box.className = "h2_box";
@@ -47,6 +50,7 @@ function get() {
    h2.textContent = "Соус на выбор";
    const p_h2 = document.createElement("p");
    p_h2.textContent = `${sauces_list[0].cnt > 0 ? 1 : 0} / 1 за 0₽`;
+   p_h2.className = "p_h2"
 
    // SAUCES
    const sauces = document.createElement("div");
