@@ -27,6 +27,9 @@ const sauces_list = [
 
 const root = document.querySelector(".right_box");
 
+let cnt_total = 220;
+let price_total = 0;
+
 function get() {
    root.innerHTML = "";
    // UP BOX
@@ -43,7 +46,7 @@ function get() {
    const h2 = document.createElement("h2");
    h2.textContent = "Соус на выбор";
    const p_h2 = document.createElement("p");
-   p_h2.textContent = "1 / 1 за 0₽";
+   p_h2.textContent = `${sauces_list[0].cnt > 0 ? 1 : 0} / 1 за 0₽`;
 
    // SAUCES
    const sauces = document.createElement("div");
@@ -59,7 +62,14 @@ function get() {
       title.textContent = el.title;
       const price = document.createElement("p");
       price.className = "price";
-      price.textContent = `+${el.price} ₽`;
+      if (el.id == 1) {
+         price.textContent = `+${el.cnt > 1 ? 60 : 0} ₽`;
+      } else {
+         price.textContent = `+${el.price} ₽`;
+      }
+      if (el.cnt > 1 ? 60 : 0) {
+         sauces_list[0].price = 60;
+      }
 
       const cnt_box = document.createElement("div");
       cnt_box.className = "cnt_box";
@@ -75,8 +85,12 @@ function get() {
          sauces_list.forEach((e) => {
             if (el.id === e.id) {
                sauces_list[e.id - 1].cnt -= 1;
+               if (e.id === 1 && e.price === 60) {
+                  sauces_list[0].price = 0;
+               }
             }
             get();
+            upDateTotal();
          });
       };
 
@@ -94,6 +108,7 @@ function get() {
                sauces_list[e.id - 1].cnt += 1;
             }
             get();
+            upDateTotal();
          });
       };
 
@@ -108,7 +123,9 @@ function get() {
    down_box.className = "down_box";
    const total_amount = document.createElement("p");
    total_amount.className = "total_amount";
-   total_amount.textContent = "220 ₽ ";
+
+   total_amount.textContent = `${cnt_total + price_total} ₽`;
+
    const btn_add = document.createElement("button");
    btn_add.className = "btn_add";
    btn_add.textContent = "Добавить";
@@ -127,3 +144,12 @@ function get() {
    down_box.appendChild(btn_add);
 }
 get();
+
+function upDateTotal() {
+   price_total = sauces_list
+      .map((e) =>
+         e.id === 1 && e.cnt > 1 ? e.price * (e.cnt - 1) : e.price * e.cnt
+      )
+      .reduce((a, b) => a + b);
+   get();
+}
